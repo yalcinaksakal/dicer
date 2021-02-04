@@ -1,0 +1,19 @@
+{
+  "name": "dicer",
+  "version": "2.0.0",
+  "description": "",
+  "default": "dice game.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --out-dir ./dist"
+  },
+  "author": "ya",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "regenerator-runtime": "^0.13.7"
+  }
+}
