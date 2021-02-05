@@ -28,7 +28,7 @@ main {
   width: 85vw;
   height: 80vh;
   background-color: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(200vh);
+  backdrop-filter: blur(100vw);
   filter: blur();
   box-shadow: 0 3vh 5vh rgba(0, 0, 0, 0.25);
   border-radius: 9px;
@@ -39,7 +39,7 @@ main {
 
 .player {
   flex: 50%;
-  padding: 9vh;
+  padding: 9vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,7 +49,7 @@ main {
 /* ELEMENTS */
 .name {
   position: relative;
-  font-size: 4vh;
+  font-size: 4vw;
   text-transform: uppercase;
   letter-spacing: 1px;
   word-spacing: 2px;
@@ -65,7 +65,7 @@ main {
 }
 
 .player--active {
-  background-color: rgba(82, 55, 236, 0.836);
+  background-color: rgba(142, 142, 233, 0.836);
 }
 .player--active .name {
   font-weight: 700;
@@ -78,7 +78,7 @@ main {
   opacity: 1;
 }
 .current-dice {
-  font-size: 2vh;
+  font-size: 1vw;
   color: rgba(122, 118, 118, 0.68);
 }
 .current {
@@ -87,7 +87,7 @@ main {
   border-radius: 9px;
   color: #fff;
   width: 65%;
-  padding: 2vh;
+  padding: 2vw;
   text-align: center;
   transition: all 0.75s;
 }
@@ -95,12 +95,12 @@ main {
 .current-label {
   text-transform: uppercase;
   margin-bottom: 1vh;
-  font-size: 2vh;
+  font-size: 2vw;
   color: #ddd;
 }
 
 .current-score {
-  font-size: 4.5vh;
+  font-size: 3.5vw;
 }
 
 /* ABSOLUTE POSITIONED ELEMENTS */
@@ -112,7 +112,7 @@ main {
   background: none;
   border: none;
   font-family: inherit;
-  font-size: 1.8vh;
+  font-size: 1.5vw;
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 400;
@@ -131,10 +131,10 @@ main {
   top: 4vh;
 }
 .btn--roll {
-  top: 65%;
+  top: 60%;
 }
 .btn--hold {
-  top: 75%;
+  top: 80%;
 }
 
 .btn:active {
@@ -151,7 +151,7 @@ main {
 }
 
 .player--winner .name {
-  font-size: 10vh;
+  font-size: 6vw;
   font-weight: 700;
   color: #ffffff;
 }
@@ -191,7 +191,7 @@ main {
   height: 7vw;
   position: absolute;
   left: 46%;
-  top: 20%;
+  top: 25%;
 }
 
 #cube {
@@ -203,6 +203,7 @@ main {
   transform-style: preserve-3d;
 
   transition: transform 0.5s;
+  user-select: none;
 }
 
 #cube:hover {
@@ -210,26 +211,22 @@ main {
 }
 
 #cube div {
-  background: hsla(0, 100%, 55%, 0.748);
   display: block;
   position: absolute;
   width: 7vw;
   height: 7vw;
-  border: 0.1vw solid #870101;
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  text-align: center;
+  border: 0.1vw solid #ababab;
+  background-color: rgba(250, 15, 15, 0.768);
   padding: 0 0;
 }
 
 .dot {
   display: block;
   position: absolute;
-  width: 1.2vw;
-  height: 1.2vw;
+  width: 1.3vw;
+  height: 1.3vw;
   background: rgb(255, 255, 255);
-  border-radius: 0.3vw;
+  border-radius: 0.5vw;
 }
 
 /*1*/

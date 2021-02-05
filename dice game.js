@@ -1,5 +1,5 @@
 "use strict";
-import { white } from "color-name";
+
 import "core-js/stable";
 
 import "regenerator-runtime/runtime";
@@ -26,15 +26,40 @@ const nameContainer = document.querySelectorAll(".name");
 
 const cube = document.getElementById("cube");
 
+const faces = [
+  document.querySelector(".front"),
+  document.querySelector(".back"),
+  document.querySelector(".left"),
+  document.querySelector(".right"),
+  document.querySelector(".top"),
+  document.querySelector(".bottom"),
+];
+
 let scores,
   currentScore,
-  activePlayer = 0,
+  activePlayer = 1,
   playing = false;
 
 const waitRolligDice = function (sec) {
   return new Promise(resolve => setTimeout(resolve, 1000 * sec));
 };
 
+const changeDiceColor = function () {
+  const color =
+    "rgba(" +
+    getRandom(26, 0) / 9 +
+    "," +
+    getRandom(26, 0) / 9 +
+    "," +
+    getRandom(26, 0) / 9 +
+    "," +
+    (Math.random() + 0.5) +
+    ")";
+
+  faces.forEach(el => {
+    el.style.background = color;
+  });
+};
 //Starting condition
 
 const init = function () {
@@ -127,6 +152,7 @@ const play = async function () {
     //give information about current situation to players
     gameMessages();
     //check for rolled 1
+    changeDiceColor();
     if (dicePositions.front !== 1) {
       currentScore += dicePositions.front;
       document.getElementById(
@@ -177,12 +203,11 @@ btnHold.addEventListener("click", function () {
 
 const simulate = async function () {
   deactivateRollButtons();
-  cube.style.transition = "transform 1s";
-  cube.style.tra;
+  cube.style.transitionDuration = "1.5s";
   while (!playing) {
-    cube.style.transform = `rotateX(${getRandom(4) + 25}deg) rotateY(${
-      getRandom(4) + 45
-    }deg) rotateZ(${getRandom(4) + 75}deg)`;
+    cube.style.transform = `rotateX(${Math.random() * 360}deg) rotateY(${
+      Math.random() * 360
+    }deg) rotateZ(${Math.random() * 360}deg)`;
     await waitRolligDice(1.5);
   }
   cube.style.transitionDuration = "0.5s";

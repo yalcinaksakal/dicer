@@ -69,16 +69,11 @@ const diceRoll = function () {
   const rotationZ = (zRand % 360) / 90;
 
   //change settlement angle(add x and y angle random(25,0) degree), so that each roll ends up with different visual
-
-  cube.style.transform =
-    "rotateX(" +
-    (xRand + getRandom(22, 0) / 90) +
-    "deg) rotateY(" +
-    (yRand + getRandom(22, 0) / 90) +
-    "deg) " +
-    "rotateZ(" +
-    (zRand + getRandom(22, 0) / 90) +
-    "deg)";
+  cube.style.transform = `rotateX(${
+    xRand + getRandom(22, 0) / 90
+  }deg) rotateY(${yRand + getRandom(22, 0) / 90}deg) rotateZ(${
+    zRand + getRandom(22, 0) / 90
+  }deg)`;
 
   //until transformation will end, .5sec is determined in css , disable click events on dice.
   //cube.style.pointerEvents = "none";
